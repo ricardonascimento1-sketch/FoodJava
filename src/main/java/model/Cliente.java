@@ -1,35 +1,30 @@
 package model;
 
 public class Cliente extends Pessoa{
-    private String CPF;
+    private String cpf;
     private String telefone;
     private String endereco;
 
-    public Cliente(String nome, String email, String senha, String CPF, String telefone, String endereco){
-        super(nome,email,senha);
-        this.CPF=CPF;
+    public Cliente(String id, String nome, String email, String senha, String cpf, String telefone, String endereco){
+        super(id,nome,email,senha);
+        this.cpf=cpf;
         this.telefone=telefone;
         this.endereco=endereco;
+    }
+    public String getTipo(){
+        return "Cliente";
     }
 
     public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
-
     public String getEndereco() {
         return endereco;
     }
 
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
-
-    public String getCPF() {
-        return CPF;
+    public String getCpf() {
+        return cpf;
     }
     public void verPedido(){
         System.out.println("Vendo!");
@@ -47,7 +42,7 @@ public class Cliente extends Pessoa{
     @Override
     public String toString() {
         return "Cliente{" +
-                "CPF='" + CPF + '\'' +
+                "CPF='" + cpf + '\'' +
                 ", telefone='" + telefone + '\'' +
                 ", endereco='" + endereco + '\'' +
                 '}';

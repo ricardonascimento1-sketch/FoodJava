@@ -2,24 +2,17 @@ package model;
 
 public class Gerente extends Pessoa{
     private String cpf;
-    private String telefone;
 
-    public Gerente(String nome, String email, String senha, String cpf,String telefone){
-        super(nome,email,senha);
+    public Gerente(String id, String nome, String email, String senha, String cpf){
+        super(id,nome,email,senha);
         this.cpf=cpf;
-        this.telefone=telefone;
+    }
+    public String getTipo(){
+        return "Gerente";
     }
 
     public String getCpf() {
         return cpf;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
     }
 
     public void addItem(){
@@ -42,7 +35,6 @@ public class Gerente extends Pessoa{
     public String toString() {
         return "Gerente{" +
                 "cpf='" + cpf + '\'' +
-                ", telefone='" + telefone + '\'' +
                 '}';
     }
 }
