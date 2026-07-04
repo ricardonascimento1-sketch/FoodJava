@@ -1,4 +1,7 @@
 package exception;
 
-public class CancelamentoNaoPermitidoException {
+public class CancelamentoNaoPermitidoException extends FoodJavaException{
+    public CancelamentoNaoPermitidoException(String message) {
+        super(message);
+    }
 }

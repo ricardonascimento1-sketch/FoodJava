@@ -1,4 +1,7 @@
 package exception;
 
-public class StatusInvalidoException {
+public class StatusInvalidoException extends FoodJavaException {
+    public StatusInvalidoException(String message) {
+        super(message);
+    }
 }

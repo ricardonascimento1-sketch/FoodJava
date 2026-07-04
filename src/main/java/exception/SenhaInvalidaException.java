@@ -1,4 +1,7 @@
 package exception;
 
-public class SenhaInvalidaException {
+public class SenhaInvalidaException extends FoodJavaException{
+    public SenhaInvalidaException(String message) {
+        super(message);
+    }
 }
