@@ -7,14 +7,14 @@ public class ItemCardapio implements Identificador {
     private String nome;
     private String descricao;
     private double preco;
-    private String categoria;
+    private Categoria categoria;
     private boolean disponivel;
 
     public ItemCardapio(){
 
     }
 
-    public ItemCardapio(String nome, String descricao, double preco, String categoria, boolean disponivel) {
+    public ItemCardapio(String nome, String descricao, double preco, Categoria categoria, boolean disponivel) {
         this.nome = nome;
         this.descricao=descricao;
         this.preco=preco;
@@ -52,11 +52,11 @@ public class ItemCardapio implements Identificador {
     }
 
 
-    public String getCategoria() {
+    public Categoria getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(String categoria) {
+    public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
 
@@ -68,7 +68,7 @@ public class ItemCardapio implements Identificador {
         this.disponivel = disponivel;
     }
 
-    public void atualizar(String nome, String descricao, double preco, String categoria, boolean disponivel) {
+    public void atualizar(String nome, String descricao, double preco, Categoria categoria, boolean disponivel) {
         this.nome = nome;
         this.descricao = descricao;
         this.preco = preco;

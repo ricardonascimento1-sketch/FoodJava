@@ -52,7 +52,7 @@ public class CardapioController {
         }
         List<ItemCardapio> itens = db.cardapio().listar();
         itens.stream().filter(i -> i.getId().equals(alvo.getId())).findFirst()
-                .ifPresent(i -> i.atualizar(nome, descricao, preco, categoria, disponivel, imagemPath));
+                .ifPresent(i -> i.atualizar(nome, descricao, preco, categoria, disponivel));
         db.cardapio().salvarTodos(itens);
     }
     public void excluir(ItemCardapio item) throws ItemVinculadoException {
@@ -94,7 +94,7 @@ public class CardapioController {
                     Categoria categoria = Categoria.valueOf(obrigatorio(o, "categoria"));
                     boolean disponivel = !o.has("disponivel") || o.get("disponivel").getAsBoolean();
                     String imagem = o.has("imagemPath") ? o.get("imagemPath").getAsString() : null;
-                    itens.add(new ItemCardapio(nome, descricao, preco, categoria, disponivel, imagem));
+                    itens.add(new ItemCardapio(nome, descricao, preco, categoria, disponivel));
                     relatorio.add("Registro " + linha + ": importado.");
                 } catch (Exception e) {
                     relatorio.add("Registro " + linha + ": " + e.getMessage());
