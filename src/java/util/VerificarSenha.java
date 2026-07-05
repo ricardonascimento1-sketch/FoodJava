@@ -8,12 +8,11 @@ import java.security.NoSuchAlgorithmException;
 
 public final class VerificarSenha {
     private VerificarSenha() {
-        // Construtor privado para impedir instanciação
     }
 
     public static void validar(String senha) throws SenhaInvalidaException {
         if (senha == null || senha.length() < 8 || senha.chars().noneMatch(Character::isDigit)) {
-            throw new SenhaInvalidaException("Senha deve ter pelo menos 8 caracteres e um dígito numérico.");
+            throw new SenhaInvalidaException("A Senha deve ter pelo menos 8 caracteres e um dígito numérico.");
         }
     }
 
