@@ -9,7 +9,7 @@ public class ItemPedido {
     public ItemPedido(){
 
     }
-    public ItemPedido(String itemId, String nome, double precoUnitario, int quantidade) {
+    public ItemPedido(ItemCardapio item, int quantidade) {
         this.itemId = itemId;
         this.nome = nome;
         this.precoUnitario = precoUnitario;

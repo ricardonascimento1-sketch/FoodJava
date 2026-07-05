@@ -12,7 +12,7 @@ import java.util.UUID;
 public class Pedido implements Identificador{
     private String id;
     private String clienteEmail;
-    private LocalDateTime data;
+    private LocalDateTime dataHora = LocalDateTime.now();
     private List<ItemPedido> itens;
     private double valorTotal;
     private StatusPedido status = StatusPedido.Aguardando_Pedido;
@@ -34,8 +34,12 @@ public class Pedido implements Identificador{
         return clienteEmail;
     }
 
-    public LocalDateTime getData() {
-        return data;
+    public LocalDateTime getDataHora() {
+        return dataHora;
+    }
+
+    public double getValorTotal() {
+        return valorTotal;
     }
 
     public List<ItemPedido> getItens() {
@@ -66,7 +70,7 @@ public class Pedido implements Identificador{
         return "Pedido{" +
                 "id='" + id.substring(0, 8) + '\'' +
                 ", emailCliente='" + clienteEmail + '\'' +
-                ", data=" + data +
+                ", data=" + dataHora +
                 ", itens=" + itens +
                 ", status=" + status +
                 '}';

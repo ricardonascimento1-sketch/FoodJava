@@ -1,6 +1,9 @@
 package model;
 
-public class ItemCardapio {
+import java.util.UUID;
+
+public class ItemCardapio implements Identificador {
+    private String id = UUID.randomUUID().toString();
     private String nome;
     private String descricao;
     private double preco;
@@ -17,6 +20,11 @@ public class ItemCardapio {
         this.preco=preco;
         this.categoria=categoria;
         this.disponivel=disponivel;
+    }
+
+    @Override
+    public String getId() {
+        return id;
     }
 
     public String getNome() {
@@ -43,6 +51,7 @@ public class ItemCardapio {
         this.preco = preco;
     }
 
+
     public String getCategoria() {
         return categoria;
     }
@@ -57,5 +66,21 @@ public class ItemCardapio {
 
     public void setDisponivel(boolean disponivel) {
         this.disponivel = disponivel;
+    }
+
+    public void atualizar(String nome, String descricao, double preco, String categoria, boolean disponivel) {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.preco = preco;
+        this.categoria = categoria;
+        this.disponivel = disponivel;
+
+    }
+
+    @Override
+    public String toString() {
+        return "ItemCardapio{" +
+                "nome='" + nome + '\'' +
+                '}';
     }
 }
